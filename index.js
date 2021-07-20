@@ -28,11 +28,14 @@ console.log(processFirstItem(['foo','bar'],function(str){return str+str}));
   Study the code for counter1 and counter2, then answer the questions below.
   
   1. What is the difference between counter1 and counter2?
-  
+      Both are a type of closure but counter 1 has a function nested in it that could be used to pass a callback. 
+
   2. Which of the two uses a closure? How can you tell?
+      They both use a closure and we can tell that because they both have functions that reach outside of their scope for variable data. 
   
   3. In what scenario would the counter1 code be preferable? In what scenario would 
      counter2 be better?  
+     Counter 1 code would be preferable if you also had callbacks that would be passed into the higher order function. Counter 2 would be preferable if your function only needed to grab data from the global scope. 
 */
 
 // counter1 code
@@ -63,7 +66,7 @@ NOTE: This will be a callback function for the tasks below
 */
 
 function inning(/*Code Here*/){
-    /*Code Here*/
+    return Math.floor(Math.random() * Math.floor(2));
 }
 
 
@@ -81,8 +84,19 @@ Use the finalScore function below to do the following:
 }
 */ 
 
-function finalScore(/*code Here*/){
-  /*Code Here*/
+function finalScore(inningcb, inningsToPlay){
+    const totalGame = [{}];
+    let homeScore = 0;
+    let awayScore = 0;
+
+  for(let i = 0; i < 9; i++){
+    const currentScore = inningsToPlay(inning);
+    homeScore = homeScore + currentScore.Home
+    awayScore = awayScore + currentScore.Away
+    totalGame.push(`Period ${i + 1}: Away ${currentscore.Away} - Home ${currentScore.Home}`);
+  }
+  return totalGame;
+    
 }
 
 /* ⚾️⚾️⚾️ Task 4: getInningScore() ⚾️⚾️⚾️
@@ -90,8 +104,8 @@ Use the getInningScore() function below to do the following:
   1. Receive a callback function - you will pass in the inning function from task 2 as your argument 
   2. Return an object with a score for home and a score for away that populates from invoking the inning callback function */
 
-function getInningScore(/*Your Code Here */) {
-  /*Your Code Here */
+function getInningScore(inning) {
+  
 }
 
 

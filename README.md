@@ -59,6 +59,7 @@ You will be running your tests in one terminal and debugging in the other. As yo
 Edit the `ReadMe` file with your answers to the questions below.
 
 1. In your own words, define closure (1-2 sentences).
+    A closure is a function that reaches outside of its block scope for variables it's lexical environment. 
 2. Study the following code, then answer the questions below.
 
 ```js
@@ -80,9 +81,11 @@ dansRoll();
 ```
 
 a. Where is closure used in this code? How can you tell?
+    ${name} is the closure because it's grabbing data from the parent function. 
 b. Compare and contrast calling `dansRoll` the first and second time. What is always the same? What could change?
+    
 c. What is the lexical scope of `newRoll`? 
-
+    "newRoll" is only available to it's immediate function because you can't send data back up. 
 
 ### Task 3 - Stretch Goals
 
